@@ -19,40 +19,20 @@ jobs:
     - name: list
       run: ls
       
-    - name: Failure test
-      if: failure()
-      run: echo 55555  
-      
-  job_2:
-    name: Nodejs md2html
-    needs: [job_1]
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: list
-      run: ls
       
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.1.0
-      
     - name: Install Dependence
       run: npm install fs marked
-      
     - name: Markdown to HTML
       run: node md2html.js
     
     - name: Failure test
       if: failure()
       run: echo 55555  
-    
-  job_3:    
-    name: Ppdate repo
-    needs: [job_2]
-    runs-on: ubuntu-latest    
-    
-    steps:
     - name: list
       run: ls
+
     
     - name: Upload to this repo
       run: |
@@ -61,7 +41,4 @@ jobs:
         git add index.html
         git commit -m 'upload pa result'
         git push -u origin master && echo ok
-        
-    - name: Failure test
-      if: failure()
-      run: echo 55555  
+     
