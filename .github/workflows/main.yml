@@ -19,10 +19,10 @@ jobs:
     - name: list
       run: ls
       
-      
+    - name: Install Dependence
+      run: npm install
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.1.0
-
     - name: Markdown to HTML
       run: node md2html.js
 
@@ -31,19 +31,13 @@ jobs:
       run: |
         git config --global user.name "growvv"
         git config --global user.email "2092876368@qq.com"
-        git add .
+        git add index.html
         git commit -m 'upload pa result'
         git push -u origin master && echo ok
         
     - name: Failure test
       if: failure()
-      run: echo 55555  
-    - name: list
-      run: ls
+      run: 
+        ls
+        echo 55555  
 
-    - name: Upload to this repo
-      run: |
-        git config --global user.name "growvv"
-        git config --global user.email "2092876368@qq.com"
-        git fetch
-        git checkout -m cc8990b index.html && echo ok
