@@ -113,3 +113,6 @@ fs.readFile('./titles.md', 'utf-8', (err, data)=>{
 
 3. 如果index.html没有改变会push失败，git语法需要进一步学习
 >好像不变有时也passing，不知道什么规则，😔😔，不过<code>passing</code>图标真好看，就像https的小锁一样，😂😂。
+
+4. <code>ls</code> 显示checkout出的文件和生成的文件都无法跨job，用needs也莫用，咋回事
+>虽然可以看到一个job里，但是这个job好累啊
