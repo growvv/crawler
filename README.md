@@ -88,24 +88,27 @@ fs.readFile('./titles.md', 'utf-8', (err, data)=>{
 妈耶，发现能直接上传到本仓库，之前的好多努力都是瞎搞。直接上传到github它不香吗？
 
 ```yml
-    - name: Upload this repo
+    - name: Upload to this repo
       run: |
         git config --global user.name "growvv"
         git config --global user.email "2092876368@qq.com"
-        git add titles.md 
-        git commit -m 'upload pa result'
-        git push -u origin master && echo ok
+        git add index.html && echo A
+        git commit -m 'upload pachong result' && echo B
+        git push -u origin master && echo C
 ```
+
+带上echo信息便于调试。
 
 完整的工作流真好看，忍不住截幅图：
 
-![](https://cdn.jsdelivr.net/gh/growvv/img/images/20200209122022.png)
-
+![](https://cdn.jsdelivr.net/gh/growvv/img/images/20200209155325.png)
 
 
 ## 四、有待改进
 1. 如果能直接上传到本仓库该多好啊【已解决】
-2. 爬虫有时会因为超时失败，可以换个爬虫框架试试【已解决】
 
-把下拉3次去掉了，在本程序中没有起到实际作用
+2. 爬虫有时会因为超时失败，可以换个爬虫框架试试【已解决】
+>把下拉3次去掉了，在本程序中没有起到实际作用
+
 3. 如果index.html没有改变会push失败，git语法需要进一步学习
+>好像不变有时也passing，不知道什么规则，😔😔，不过<code>passing</code>图标真好看，就像https的小锁一样，😂😂。
