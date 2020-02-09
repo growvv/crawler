@@ -35,6 +35,8 @@ jobs:
     
     - name: Upload this repo
       run: |
+        git config --global user.name "growvv"
+        git config --global user.email "2092876368@qq.com"
         git init
         git add titles.txt
         git commit -m 'upload pa result'
