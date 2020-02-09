@@ -22,8 +22,7 @@ jobs:
       
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.1.0
-    - name: Install Dependence
-      run: npm install fs marked
+
     - name: Markdown to HTML
       run: node md2html.js
 
@@ -46,5 +45,5 @@ jobs:
       run: |
         git config --global user.name "growvv"
         git config --global user.email "2092876368@qq.com"
-        git getch
+        git fetch
         git checkout -m cc8990b index.html && echo ok
