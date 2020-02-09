@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 jobs:
-  Python crawler:
+  python_crawler:
     
     runs-on: ubuntu-latest
 
@@ -17,7 +17,7 @@ jobs:
     - name: Run pa.py
       run: python pa.py
       
-  Nodejs md2html:
+  nodejs_md2html:
     
     runs-on: ubuntu-latest
     
@@ -32,7 +32,7 @@ jobs:
     - name: Markdown to HTML
       run: node md2html.js
     
-  Update repo:
+  update_repo:
     
     runs-on: ubuntu-latest    
     
