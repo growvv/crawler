@@ -19,12 +19,14 @@ jobs:
     - name: list
       run: ls
       
-    - name: Install Dependence
-      run: npm install
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.1.0
+    - name: Install Dependence
+      run: npm install
     - name: Markdown to HTML
       run: node md2html.js
+    - name: remove titles.md
+      run: rm titles.md
 
     
     - name: Upload to this repo
@@ -37,7 +39,7 @@ jobs:
         
     - name: Failure test
       if: failure()
-      run: 
+      run: | 
         ls
         echo 55555  
 
