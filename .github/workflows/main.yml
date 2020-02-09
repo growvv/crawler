@@ -35,11 +35,6 @@ jobs:
     
     - name: Upload this repo
       run: |
-        git config --global user.name "growvv"
-        git config --global user.email "2092876368@qq.com"
-        git init && echo 111
         git add titles.md 
         git commit -m 'upload pa result'
-        git remote add origin https://github.com/growvv/crawler.git
-        git pull --rebase origin master  && echo 222
         git push -u origin master && echo 333
