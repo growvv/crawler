@@ -1,1 +1,34 @@
+name: CI
 
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Dependence
+      run: pip install requests-html
+    
+    - name: Setup Python environment
+      uses: actions/setup-python@v1.1.1
+
+    - name: Run pa.py
+      run: python pa.py
+      
+    - name: Install qrsctl
+      run: |
+        wget http://devtools.qiniu.com/linux/amd64/qrsctl
+        chmod +x qrsctl
+        sudo cp qrsctl /usr/local/bin/ && echo ok     
+    - name: Upload to Qiniu
+      run: | 
+        qrsctl login 2092876368@qq.com lfr139931
+        qrsctl info
+        qrsctl put 111imgbed titles.txt titles.txt
+        
+    - name: list again
+      run: ls
