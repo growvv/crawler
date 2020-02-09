@@ -14,6 +14,7 @@ fs.readFile('./titles.md', 'utf-8', (err, data)=>{
                 throw err
             }else{
                 console.log("success")
+                console.log(htmlStr)
             }
         })
     }
