@@ -26,19 +26,25 @@ jobs:
       run: npm install fs marked
     - name: Markdown to HTML
       run: node md2html.js
-    
-    - name: Failure test
-      if: failure()
-      run: echo 55555  
-    - name: list
-      run: ls
 
     
     - name: Upload to this repo
       run: |
         git config --global user.name "growvv"
         git config --global user.email "2092876368@qq.com"
-        git add index.html
+        git add .
         git commit -m 'upload pa result'
         git push -u origin master && echo ok
-     
+        
+    - name: Failure test
+      if: failure()
+      run: echo 55555  
+    - name: list
+      run: ls
+
+    - name: Upload to this repo
+      run: |
+        git config --global user.name "growvv"
+        git config --global user.email "2092876368@qq.com"
+        git getch
+        git checkout -m cc8990b index.html && echo ok
