@@ -17,7 +17,7 @@
       run: pip install requests-html
 ```
 
-### 2.运行爬虫
+### 2. 运行爬虫
 
 ```yml
     - name: Run pa.py
@@ -108,3 +108,4 @@ fs.readFile('./titles.md', 'utf-8', (err, data)=>{
 2. 爬虫有时会因为超时失败，可以换个爬虫框架试试【已解决】
 
 把下拉3次去掉了，在本程序中没有起到实际作用
+3. 如果index.html没有改变会push失败，git语法需要进一步学习
