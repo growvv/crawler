@@ -16,9 +16,11 @@ jobs:
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1 
     - name: Install Dependence
-      run: pip install requests-html
+      run: pip install requests-html pytz
     - name: Run pa.py
       run: python pa.py
+    - name: Run pa2.py
+      run: python pa2.py
     - name: list
       run: ls
       
@@ -29,14 +31,16 @@ jobs:
     - name: Markdown to HTML
       run: node md2html.js
     - name: remove titles.md
-      run: rm titles.md
+      run: |
+        rm titles.md
+        rm record.md
 
     
     - name: Upload to this repo
       run: |
         git config --global user.name "growvv"
         git config --global user.email "2092876368@qq.com"
-        git add index.html && echo A
+        git add index.html  record.html && echo A
         git commit -m 'upload pa result' && echo B
         git push -u origin master && echo C
         
