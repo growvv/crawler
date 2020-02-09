@@ -1,4 +1,4 @@
-# crawler
+# crawler ![CI](https://github.com/growvv/crawler/workflows/CI/badge.svg)
 使用GitHub Action运行爬虫，并将结果保存到七牛云对象存储。
 
 ## 一、爬虫部分
@@ -61,6 +61,12 @@
         git push -u origin master && echo ok
 ```
 
+完整的工作流真好看，忍不住截幅图：
+
+![](https://cdn.jsdelivr.net/gh/growvv/img/images/20200209122022.png)
+
+
 ## 三、有待改进
 1. 如果能直接上传到本仓库该多好啊【已解决】
 2. 爬虫有时会因为超时失败，可以换个爬虫框架试试
+
