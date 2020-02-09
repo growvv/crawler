@@ -36,9 +36,9 @@ jobs:
       run: |
         git config --global user.name "growvv"
         git config --global user.email "2092876368@qq.com"
-        git add index.html
-        git commit -m 'upload pa result'
-        git push -u origin master && echo ok
+        git add index.html && echo A
+        git commit -m 'upload pa result' && echo B
+        git push -u origin master && echo C
         
     - name: Failure test
       if: failure()
