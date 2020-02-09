@@ -32,3 +32,12 @@ jobs:
         
     - name: list again
       run: ls
+    
+    - name: Upload this repo
+      run: |
+        git init
+        git add titles.txt
+        git commit -m 'upload pa result'
+        git remote add origin https://github.com/growvv/crawler.git
+        git pull --rebase origin master
+        git push -u origin master
