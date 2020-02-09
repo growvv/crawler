@@ -10,11 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install Dependence
-      run: pip install requests-html
-    
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1
+    
+    - name: Install Dependence
+      run: pip install requests-html
 
     - name: Run pa.py
       run: python pa.py
