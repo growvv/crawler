@@ -18,6 +18,6 @@ def get_title(url):
             id = id + 1
 
 if __name__ == '__main__':
-    for x in range(1, 10):
+    for x in range(1, 11):
         print('当前页面: '+ str(x))
         get_title(base_url+str(x))
