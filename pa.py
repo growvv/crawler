@@ -10,7 +10,7 @@ def get_title(url):
     r.html.render(scrolldown=3, sleep=0.01)  #下拉3次
     titles = r.html.find('a.postTitle2')
     print(len(titles))
-    with open('titles.txt', 'a', encoding="utf-8") as f:  #使用utf-8编码
+    with open('titles.md', 'a', encoding="utf-8") as f:  #使用utf-8编码
         for i, title in enumerate(titles):
             s = f'{id} [{title.text}]({title.attrs["href"]})'
             print(s)
