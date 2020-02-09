@@ -3,8 +3,8 @@ name: CI
 on: [push]
 
 jobs:
-  python_crawler:
-    
+  job_1:
+    name: Python Crawler
     runs-on: ubuntu-latest
 
     steps:
@@ -17,8 +17,9 @@ jobs:
     - name: Run pa.py
       run: python pa.py
       
-  nodejs_md2html:
-    
+  job_2:
+    name: Nodejs md2html
+    needs: [job_1]
     runs-on: ubuntu-latest
     
     steps:
@@ -32,8 +33,9 @@ jobs:
     - name: Markdown to HTML
       run: node md2html.js
     
-  update_repo:
-    
+  job_3:
+    name: Ppdate repo
+    needs: [job_2]
     runs-on: ubuntu-latest    
     
     steps:
@@ -42,6 +44,10 @@ jobs:
       run: |
         git config --global user.name "growvv"
         git config --global user.email "2092876368@qq.com"
-        git add titles.md 
+        git add index.html
         git commit -m 'upload pa result'
         git push -u origin master && echo ok
+        
+    - name: Failure test
+      if: failure()
+      run: echo 55555  
