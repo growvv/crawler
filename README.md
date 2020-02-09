@@ -47,5 +47,20 @@
         qrsctl put 111imgbed titles.txt titles.txt
 ```
 
+### 3. 上传到repo
+
+妈耶，发现能直接上传到本仓库，之前的好多努力都是瞎搞。直接上传到github它不香吗？
+
+```yml
+    - name: Upload this repo
+      run: |
+        git config --global user.name "growvv"
+        git config --global user.email "2092876368@qq.com"
+        git add titles.md 
+        git commit -m 'upload pa result'
+        git push -u origin master && echo ok
+```
+
 ## 三、有待改进
-1. 如果能直接上传到本仓库该多好啊
+1. 如果能直接上传到本仓库该多好啊【已解决】
+2. 爬虫有时会因为超时失败，可以换个爬虫框架试试
