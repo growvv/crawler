@@ -16,6 +16,12 @@ jobs:
       run: pip install requests-html
     - name: Run pa.py
       run: python pa.py
+    - name: list
+      run: ls
+      
+    - name: Failure test
+      if: failure()
+      run: echo 55555  
       
   job_2:
     name: Nodejs md2html
@@ -23,7 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    
+    - name: list
+      run: ls
+      
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.1.0
       
@@ -33,12 +41,18 @@ jobs:
     - name: Markdown to HTML
       run: node md2html.js
     
-  job_3:
+    - name: Failure test
+      if: failure()
+      run: echo 55555  
+    
+  job_3:    
     name: Ppdate repo
     needs: [job_2]
     runs-on: ubuntu-latest    
     
     steps:
+    - name: list
+      run: ls
     
     - name: Upload to this repo
       run: |
