@@ -7,7 +7,7 @@ def get_title(url):
     global id #在函数内部修改全局变量的值，要先用global声明全局变量。
     session = HTMLSession()
     r = session.get(url)
-    r.html.render(scrolldown=1, sleep=0.01)  #下拉3次
+    # r.html.render(scrolldown=1, sleep=0.01)  #下拉3次
     titles = r.html.find('a.postTitle2')
     print(len(titles))
     with open('titles.md', 'a', encoding="utf-8") as f:  #使用utf-8编码
