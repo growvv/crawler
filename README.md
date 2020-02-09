@@ -1,7 +1,8 @@
 # crawler ![CI](https://github.com/growvv/crawler/workflows/CI/badge.svg)
 使用GitHub Action运行爬虫，并将结果保存到七牛云对象存储。
 
-[查看效果](https://rogn.top/crawler/)
+1. [效果1-微博热搜榜](https://rogn.top/crawler/)
+2. [效果2-博客园积分排行趋势](https://rogn.top/crawler/record.html)
 
 ## 一、爬虫部分
 
@@ -107,8 +108,8 @@ fs.readFile('./titles.md', 'utf-8', (err, data)=>{
 ## 四、有待改进
 1. 如果能直接上传到本仓库该多好啊【已解决】
 
-2. 爬虫有时会因为超时失败，可以换个爬虫框架试试【已解决】
->把下拉3次去掉了，在本程序中没有起到实际作用
+2. 爬虫有时会因为超时失败，可以换个爬虫框架试试【解决】
+>pa.py中把下拉3次去掉即可，因为其在程序中没有起到实际作用。然而pa2.py必须要用render(),，不然find不到，这样又有随机的Timeout问题了。
 
 3. 如果index.html没有改变会push失败，git语法需要进一步学习
 >好像不变有时也passing，不知道什么规则，😔😔，不过<code>passing</code>图标真好看，就像https的小锁一样，😂😂。
