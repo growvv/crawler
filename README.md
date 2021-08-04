@@ -79,7 +79,7 @@ fs.readFile('./titles.md', 'utf-8', (err, data)=>{
 ```yml
     - name: Upload to Qiniu
       run: | 
-        qrsctl login 2092876368@qq.com lfr139931
+        qrsctl login xxxxx@qq.com xxxxxx
         qrsctl info
         qrsctl put 111imgbed titles.txt titles.txt
 ```
